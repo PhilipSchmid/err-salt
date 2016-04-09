@@ -18,6 +18,12 @@ Installation
 !repos install https://github.com/sijis/err-salt.git
 ```
 
+Configuration
+---
+```
+!plugin config Salt
+```
+
 Usage
 ---
 Simple example usage
