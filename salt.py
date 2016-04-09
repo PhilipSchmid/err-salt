@@ -61,7 +61,6 @@ class Salt(BotPlugin):
             response = '3 parameters required. see !help salt'
             self.send(msg.frm,
                       response,
-                      message_type=msg.type,
                       in_reply_to=msg,
                       groupchat_nick_reply=True)
             return
@@ -85,7 +84,6 @@ class Salt(BotPlugin):
         self.send(msg.frm,
                   results,
                   #self.pastebin(config_dict[environment], results),
-                  message_type=msg.type,
                   in_reply_to=msg,
                   groupchat_nick_reply=True)
 
@@ -99,7 +97,6 @@ class Salt(BotPlugin):
             response = '2 parameters required. see !help salt'
             self.send(msg.frm,
                       response,
-                      message_type=msg.type,
                       in_reply_to=msg,
                       groupchat_nick_reply=True)
             return
@@ -122,6 +119,5 @@ class Salt(BotPlugin):
         results = json.dumps(ret, sort_keys=True, indent=4)
         self.send(msg.frm,
                   self.pastebin(results),
-                  message_type=msg.type,
                   in_reply_to=msg,
                   groupchat_nick_reply=True)

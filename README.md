@@ -8,6 +8,7 @@ Documentation: http://salt-api.readthedocs.org/en/latest/
 
 Requirements
 ---
+You must install salt-pepper where errbot can load it before activating the Salt plugin.
 ```
 pip install salt-pepper
 ```
