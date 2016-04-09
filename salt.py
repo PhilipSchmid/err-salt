@@ -59,10 +59,7 @@ class Salt(BotPlugin):
 
         if len(args) < 3:
             response = '3 parameters required. see !help salt'
-            self.send(msg.frm,
-                      response,
-                      in_reply_to=msg,
-                      groupchat_nick_reply=True)
+            yield response
             return
 
         environment = args.pop(0)
@@ -81,11 +78,7 @@ class Salt(BotPlugin):
                         kwarg=None,
                         expr_form='pcre')
         results = json.dumps(ret, sort_keys=True, indent=4)
-        self.send(msg.frm,
-                  results,
-                  #self.pastebin(config_dict[environment], results),
-                  in_reply_to=msg,
-                  groupchat_nick_reply=True)
+        yield results
 
     @botcmd(split_args_with=ShlexArgParser())
     def salt_grains(self, msg, args):
@@ -93,12 +86,9 @@ class Salt(BotPlugin):
             example:
             !salt grains 'os:Centos' cmd.run 'cat /etc/hosts'
         '''
-        if len(args) < 2:
-            response = '2 parameters required. see !help salt'
-            self.send(msg.frm,
-                      response,
-                      in_reply_to=msg,
-                      groupchat_nick_reply=True)
+        if len(args) < 3:
+            response = '3 parameters required. see !help salt'
+            yield response
             return
 
         environment = args.pop(0)
@@ -117,7 +107,4 @@ class Salt(BotPlugin):
                         kwarg=None,
                         expr_form='grain')
         results = json.dumps(ret, sort_keys=True, indent=4)
-        self.send(msg.frm,
-                  self.pastebin(results),
-                  in_reply_to=msg,
-                  groupchat_nick_reply=True)
+        yield results
