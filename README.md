@@ -16,7 +16,7 @@ pip install salt-pepper
 Installation
 ---
 ```
-!repos install https://github.com/sijis/err-salt.git
+!repos install https://github.com/PhilipSchmid/err-salt
 ```
 
 Configuration

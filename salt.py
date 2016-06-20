@@ -43,7 +43,7 @@ class Salt(BotPlugin):
         )
         log.debug('url: {}'.format(url))
         return url.text.strip('"')
-      except Exception, e:
+      except Exception as e:
         return 'Error in pastebin integration.'
 
     @botcmd
