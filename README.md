@@ -1,4 +1,4 @@
-Err plugin for Salt
+ErrBot plugin for Salt
 ===
 
 Setup
@@ -8,10 +8,7 @@ Documentation: http://salt-api.readthedocs.org/en/latest/
 
 Requirements
 ---
-You must install salt-pepper where errbot can load it before activating the Salt plugin.
-```
-pip install salt-pepper
-```
+Make sure you have salt-pepper installed or simply use https://hub.docker.com/r/pschmid/docker-errbot-saltslack/.
 
 Installation
 ---
@@ -23,6 +20,21 @@ Configuration
 ---
 ```
 !plugin config Salt
+```
+Sample configuration:
+```
+!plugin config Salt 
+[  
+   {  
+      "api_auth":"pam",
+      "api_pass":"mypassword",
+      "api_url":"saltMasterIP:8080",
+      "api_user":"myuser",
+      "environment":"base",
+      "paste_api_url":""
+   }
+]
+
 ```
 
 Usage
