@@ -86,6 +86,7 @@ Usage
 Simple example usage
 
 ```
-!salt * test.ping
-!salt app* cmd.run "ps -ef  | grep python"
+!salt base * test.ping
+!salt base * cmd.run "ps -ef | grep python"
+!salt base saltmaster* cmd.run "ip addr"
 ```

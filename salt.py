@@ -48,8 +48,7 @@ class Salt(BotPlugin):
 
     @botcmd
     def salt(self, msg, args):
-        ''' executes a salt command on systems,
-            using the specified environment
+        ''' executes a salt command on systems using the specified environment
             example:
             !salt prod log*.local cmd.run 'cat /etc/hosts'
             !salt prod log*.local test.ping
@@ -79,7 +78,7 @@ class Salt(BotPlugin):
                         expr_form='pcre')
         results = json.dumps(ret, sort_keys=True, indent=4)
         yield results
-
+'''
     @botcmd(split_args_with=ShlexArgParser())
     def salt_grains(self, msg, args):
         ''' executes a salt command on systems
@@ -108,3 +107,4 @@ class Salt(BotPlugin):
                         expr_form='grain')
         results = json.dumps(ret, sort_keys=True, indent=4)
         yield results
+'''
