@@ -78,7 +78,7 @@ class Salt(BotPlugin):
                         expr_form='pcre')
         results = json.dumps(ret, sort_keys=True, indent=4)
         yield results
-'''
+
     @botcmd(split_args_with=ShlexArgParser())
     def salt_grains(self, msg, args):
         ''' executes a salt command on systems
@@ -107,4 +107,3 @@ class Salt(BotPlugin):
                         expr_form='grain')
         results = json.dumps(ret, sort_keys=True, indent=4)
         yield results
-'''
